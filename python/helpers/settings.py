@@ -809,7 +809,8 @@ def convert_in(settings: dict) -> Settings:
                     if field["id"].endswith("_kwargs"):
                         current[field["id"]] = _env_to_dict(field["value"])
                     elif field["id"].startswith("api_key_"):
-                        current["api_keys"][field["id"]] = field["value"]
+                        provider = field["id"].replace("api_key_", "")  # Extract provider name
+                        current["api_keys"][provider] = field["value"]
                     else:
                         current[field["id"]] = field["value"]
     return current
@@ -892,7 +893,7 @@ def _remove_sensitive_settings(settings: Settings):
 
 def _write_sensitive_settings(settings: Settings):
     for key, val in settings["api_keys"].items():
-        dotenv.save_dotenv_value(key.upper(), val)
+        dotenv.save_dotenv_value(f"API_KEY_{key.upper()}", val)
 
     dotenv.save_dotenv_value(dotenv.KEY_AUTH_LOGIN, settings["auth_login"])
     if settings["auth_password"]:
