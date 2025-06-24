@@ -1,206 +1,249 @@
-# 🐳 docker-mcp
+<div align="center">
 
-[![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/release/python-3120/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![smithery badge](https://smithery.ai/badge/docker-mcp)](https://smithery.ai/protocol/docker-mcp)
-
-A powerful Model Context Protocol (MCP) server for Docker operations, enabling seamless container and compose stack management through Claude AI.
-
-## ✨ Features
-
-- 🚀 Container creation and instantiation
-- 📦 Docker Compose stack deployment
-- 🔍 Container logs retrieval
-- 📊 Container listing and status monitoring
-
-### 🎬 Demos
-#### Deploying a Docker Compose Stack
+# `Agent Zero`
 
 
-https://github.com/user-attachments/assets/b5f6e40a-542b-4a39-ba12-7fdf803ee278
+[![Agent Zero Website](https://img.shields.io/badge/Website-agent--zero.ai-0A192F?style=for-the-badge&logo=vercel&logoColor=white)](https://agent-zero.ai) [![Thanks to Sponsors](https://img.shields.io/badge/GitHub%20Sponsors-Thanks%20to%20Sponsors-FF69B4?style=for-the-badge&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/frdel) [![Follow on X](https://img.shields.io/badge/X-Follow-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/Agent0ai) [![Join our Discord](https://img.shields.io/badge/Discord-Join%20our%20server-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/B8KZKNsPpj) [![Subscribe on YouTube](https://img.shields.io/badge/YouTube-Subscribe-red?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@AgentZeroFW) [![Connect on LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jan-tomasek/) [![Follow on Warpcast](https://img.shields.io/badge/Warpcast-Follow-5A32F3?style=for-the-badge)](https://warpcast.com/agent-zero)
+
+[Introduction](#a-personal-organic-agentic-framework-that-grows-and-learns-with-you) •
+[Installation](./docs/installation.md) •
+[Hacking Edition](#hacking-edition) •
+[How to update](./docs/installation.md#how-to-update-agent-zero) •
+[Documentation](./docs/README.md) •
+[Usage](./docs/usage.md)
+
+</div>
 
 
+<div align="center">
 
-#### Analyzing Container Logs
+> ### 📢 **NEWS: Agent Zero now includes MCP Server & Client functionality!** 📢
+>
+> Agent Zero can now act as an MCP Server for other LLM tools and use external MCP servers as tools
 
-
-
-https://github.com/user-attachments/assets/da386eea-2fab-4835-82ae-896de955d934
+</div>
 
 
 
-## 🚀 Quickstart
+[![Showcase](/docs/res/showcase-thumb.png)](https://youtu.be/lazLNcEYsiQ)
 
-To try this in Claude Desktop app, add this to your claude config files:
-```json
-{
-  "mcpServers": {
-    "docker-mcp": {
-      "command": "uvx",
-      "args": [
-        "docker-mcp"
-      ]
-    }
-  }
-}
-```
 
-### Installing via Smithery
 
-To install Docker MCP for Claude Desktop automatically via [Smithery](https://smithery.ai/protocol/docker-mcp):
+## A personal, organic agentic framework that grows and learns with you
 
-```bash
-npx @smithery/cli install docker-mcp --client claude
-```
 
-### Prerequisites
 
-- UV (package manager)
-- Python 3.12+
-- Docker Desktop or Docker Engine
-- Claude Desktop
+- Agent Zero is not a predefined agentic framework. It is designed to be dynamic, organically growing, and learning as you use it.
+- Agent Zero is fully transparent, readable, comprehensible, customizable, and interactive.
+- Agent Zero uses the computer as a tool to accomplish its (your) tasks.
 
-### Installation
+# 💡 Key Features
 
-#### Claude Desktop Configuration
+1. **General-purpose Assistant**
 
-Add the server configuration to your Claude Desktop config file:
+- Agent Zero is not pre-programmed for specific tasks (but can be). It is meant to be a general-purpose personal assistant. Give it a task, and it will gather information, execute commands and code, cooperate with other agent instances, and do its best to accomplish it.
+- It has a persistent memory, allowing it to memorize previous solutions, code, facts, instructions, etc., to solve tasks faster and more reliably in the future.
 
-**MacOS**: `~/Library/Application\ Support/Claude/claude_desktop_config.json`  
-**Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
+![Agent 0 Working](/docs/res/ui-screen-2.png)
 
-<details>
-  <summary>💻 Development Configuration</summary>
+2. **Computer as a Tool**
 
-```json
-{
-  "mcpServers": {
-    "docker-mcp": {
-      "command": "uv",
-      "args": [
-        "--directory",
-        "<path-to-docker-mcp>",
-        "run",
-        "docker-mcp"
-      ]
-    }
-  }
-}
-```
-</details>
+- Agent Zero uses the operating system as a tool to accomplish its tasks. It has no single-purpose tools pre-programmed. Instead, it can write its own code and use the terminal to create and use its own tools as needed.
+- The only default tools in its arsenal are online search, memory features, communication (with the user and other agents), and code/terminal execution. Everything else is created by the agent itself or can be extended by the user.
+- Tool usage functionality has been developed from scratch to be the most compatible and reliable, even with very small models.
+- **Default Tools:** Agent Zero includes tools like knowledge, webpage content, code execution, and communication.
+- **Creating Custom Tools:** Extend Agent Zero's functionality by creating your own custom tools.
+- **Instruments:** Instruments are a new type of tool that allow you to create custom functions and procedures that can be called by Agent Zero.
 
-<details>
-  <summary>🚀 Production Configuration</summary>
+3. **Multi-agent Cooperation**
 
-```json
-{
-  "mcpServers": {
-    "docker-mcp": {
-      "command": "uvx",
-      "args": [
-        "docker-mcp"
-      ]
-    }
-  }
-}
-```
-</details>
+- Every agent has a superior agent giving it tasks and instructions. Every agent then reports back to its superior.
+- In the case of the first agent in the chain (Agent 0), the superior is the human user; the agent sees no difference.
+- Every agent can create its subordinate agent to help break down and solve subtasks. This helps all agents keep their context clean and focused.
 
-## 🛠️ Development
+![Multi-agent](docs/res/physics.png)
+![Multi-agent 2](docs/res/physics-2.png)
 
-### Local Setup
+4. **Completely Customizable and Extensible**
 
-1. Clone the repository:
-```bash
-git clone https://github.com/QuantGeekDev/docker-mcp.git
-cd docker-mcp
-```
+- Almost nothing in this framework is hard-coded. Nothing is hidden. Everything can be extended or changed by the user.
+- The whole behavior is defined by a system prompt in the **prompts/default/agent.system.md** file. Change this prompt and change the framework dramatically.
+- The framework does not guide or limit the agent in any way. There are no hard-coded rails that agents have to follow.
+- Every prompt, every small message template sent to the agent in its communication loop can be found in the **prompts/** folder and changed.
+- Every default tool can be found in the **python/tools/** folder and changed or copied to create new predefined tools.
 
-2. Create and activate a virtual environment:
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
+![Prompts](/docs/res/prompts.png)
 
-3. Install dependencies:
-```bash
-uv sync
-```
+5. **Communication is Key**
 
-### 🔍 Debugging
+- Give your agent a proper system prompt and instructions, and it can do miracles.
+- Agents can communicate with their superiors and subordinates, asking questions, giving instructions, and providing guidance. Instruct your agents in the system prompt on how to communicate effectively.
+- The terminal interface is real-time streamed and interactive. You can stop and intervene at any point. If you see your agent heading in the wrong direction, just stop and tell it right away.
+- There is a lot of freedom in this framework. You can instruct your agents to regularly report back to superiors asking for permission to continue. You can instruct them to use point-scoring systems when deciding when to delegate subtasks. Superiors can double-check subordinates' results and dispute. The possibilities are endless.
 
-Launch the MCP Inspector for debugging:
+## 🚀 Things you can build with Agent Zero
+
+- **Development Projects** - `"Create a React dashboard with real-time data visualization"`
+
+- **Data Analysis** - `"Analyze last quarter's NVIDIA sales data and create trend reports"`
+
+- **Content Creation** - `"Write a technical blog post about microservices"`
+
+- **System Admin** - `"Set up a monitoring system for our web servers"`
+
+- **Research** - `"Gather and summarize five recent AI papers about CoT prompting"`
+
+# Hacking Edition
+- Agent Zero also offers a Hacking Edition based on Kali linux with modified prompts for cybersecurity tasks
+- The setup is the same as the regular version, just use the frdel/agent-zero-run:hacking image instead of frdel/agent-zero-run
+> **Note:** The Hacking Edition and all its prompts and features will be merged into the main branch in the following release.
+
+
+# ⚙️ Installation
+
+Click to open a video to learn how to install Agent Zero:
+
+[![Easy Installation guide](/docs/res/easy_ins_vid.png)](https://www.youtube.com/watch?v=L1_peV8szf8)
+
+A detailed setup guide for Windows, macOS, and Linux with a video can be found in the Agent Zero Documentation at [this page](./docs/installation.md).
+
+### ⚡ Quick Start
 
 ```bash
-npx @modelcontextprotocol/inspector uv --directory <path-to-docker-mcp> run docker-mcp
+# Pull and run with Docker
+
+docker pull frdel/agent-zero-run
+docker run -p 50001:80 frdel/agent-zero-run
+
+# Visit http://localhost:50001 to start
 ```
 
-The Inspector will provide a URL to access the debugging interface.
+## 🐳 Fully Dockerized, with Speech-to-Text and TTS
 
-## 📝 Available Tools
+![Settings](docs/res/settings-page-ui.png)
 
-The server provides the following tools:
+- Customizable settings allow users to tailor the agent's behavior and responses to their needs.
+- The Web UI output is very clean, fluid, colorful, readable, and interactive; nothing is hidden.
+- You can load or save chats directly within the Web UI.
+- The same output you see in the terminal is automatically saved to an HTML file in **logs/** folder for every session.
 
-### create-container
-Creates a standalone Docker container
-```json
-{
-    "image": "image-name",
-    "name": "container-name",
-    "ports": {"80": "80"},
-    "environment": {"ENV_VAR": "value"}
-}
-```
+![Time example](/docs/res/time_example.jpg)
 
-### deploy-compose
-Deploys a Docker Compose stack
-```json
-{
-    "project_name": "example-stack",
-    "compose_yaml": "version: '3.8'\nservices:\n  service1:\n    image: image1:latest\n    ports:\n      - '8080:80'"
-}
-```
+- Agent output is streamed in real-time, allowing users to read along and intervene at any time.
+- No coding is required; only prompting and communication skills are necessary.
+- With a solid system prompt, the framework is reliable even with small models, including precise tool usage.
 
-### get-logs
-Retrieves logs from a specific container
-```json
-{
-    "container_name": "my-container"
-}
-```
+## 👀 Keep in Mind
 
-### list-containers
-Lists all Docker containers
-```json
-{}
-```
+1. **Agent Zero Can Be Dangerous!**
 
-## 🚧 Current Limitations
+- With proper instruction, Agent Zero is capable of many things, even potentially dangerous actions concerning your computer, data, or accounts. Always run Agent Zero in an isolated environment (like Docker) and be careful what you wish for.
 
-- No built-in environment variable support for containers
-- No volume management
-- No network management
-- No container health checks
-- No container restart policies
-- No container resource limits
+2. **Agent Zero Is Prompt-based.**
 
-## 🤝 Contributing
+- The whole framework is guided by the **prompts/** folder. Agent guidelines, tool instructions, messages, utility AI functions, it's all there.
 
-1. Fork the repository from [docker-mcp](https://github.com/QuantGeekDev/docker-mcp)
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
 
-## 📜 License
+## 📚 Read the Documentation
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+| Page | Description |
+|-------|-------------|
+| [Installation](./docs/installation.md) | Installation, setup and configuration |
+| [Usage](./docs/usage.md) | Basic and advanced usage |
+| [Architecture](./docs/architecture.md) | System design and components |
+| [Contributing](./docs/contribution.md) | How to contribute |
+| [Troubleshooting](./docs/troubleshooting.md) | Common issues and their solutions |
 
-## ✨ Authors
+## Coming soon
 
-- **Alex Andru** - *Initial work | Core contributor* - [@QuantGeekDev](https://github.com/QuantGeekDev)
-- **Ali Sadykov** - *Initial work  | Core contributor* - [@md-archive](https://github.com/md-archive)
+- **MCP**
+- **Knowledge and RAG Tools**
 
----
-Made with ❤️
+## 🎯 Changelog
+
+### v0.8.7 - Formatting, Document RAG Latest
+[Release video](https://youtu.be/OQJkfofYbus)
+- markdown rendering in responses
+- live response rendering
+- document Q&A tool
+
+### v0.8.6 - Merge and update
+[Release video](https://youtu.be/l0qpK3Wt65A)
+- Merge with Hacking Edition
+- browser-use upgrade and integration re-work
+- tunnel provider switch
+
+### v0.8.5 - **MCP Server + Client**
+[Release video](https://youtu.be/pM5f4Vz3_IQ)
+
+- Agent Zero can now act as MCP Server
+- Agent Zero can use external MCP servers as tools
+
+### v0.8.4.1 - 2
+Default models set to gpt-4.1
+- Code execution tool improvements
+- Browser agent improvements
+- Memory improvements
+- Various bugfixes related to context management
+- Message formatting improvements
+- Scheduler improvements
+- New model provider
+- Input tool fix
+- Compatibility and stability improvements
+
+### v0.8.4
+[Release video](https://youtu.be/QBh_h_D_E24)
+
+- **Remote access (mobile)**
+
+### v0.8.3.1
+[Release video](https://youtu.be/AGNpQ3_GxFQ)
+
+- **Automatic embedding**
+
+
+### v0.8.3
+[Release video](https://youtu.be/bPIZo0poalY)
+
+- ***Planning and scheduling***
+
+### v0.8.2
+[Release video](https://youtu.be/xMUNynQ9x6Y)
+
+- **Multitasking in terminal**
+- **Chat names**
+
+### v0.8.1
+[Release video](https://youtu.be/quv145buW74)
+
+- **Browser Agent**
+- **UX Improvements**
+
+### v0.8
+[Release video](https://youtu.be/cHDCCSr1YRI)
+
+- **Docker Runtime**
+- **New Messages History and Summarization System**
+- **Agent Behavior Change and Management**
+- **Text-to-Speech (TTS) and Speech-to-Text (STT)**
+- **Settings Page in Web UI**
+- **SearXNG Integration Replacing Perplexity + DuckDuckGo**
+- **File Browser Functionality**
+- **KaTeX Math Visualization Support**
+- **In-chat File Attachments**
+
+### v0.7
+[Release video](https://youtu.be/U_Gl0NPalKA)
+
+- **Automatic Memory**
+- **UI Improvements**
+- **Instruments**
+- **Extensions Framework**
+- **Reflection Prompts**
+- **Bug Fixes**
+
+## 🤝 Community and Support
+
+- [Join our Discord](https://discord.gg/B8KZKNsPpj) for live discussions or [visit our Skool Community](https://www.skool.com/agent-zero).
+- [Follow our YouTube channel](https://www.youtube.com/@AgentZeroFW) for hands-on explanations and tutorials
+- [Report Issues](https://github.com/frdel/agent-zero/issues) for bug fixes and features
